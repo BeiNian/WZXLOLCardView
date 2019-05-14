@@ -31,6 +31,31 @@
     return YES;
 }
 
+/**
+ * 决定了cell怎么排布
+ */
+//- (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
+//
+//    // 调用父类方法拿到默认的布局属性
+//    NSArray *array = [super layoutAttributesForElementsInRect:rect];
+//    NSArray *copyArray = [[NSArray alloc]initWithArray:array copyItems:YES];
+//    // 获得collectionView最中间的x值
+//    CGFloat centerX = self.collectionView.contentOffset.x + self.collectionView.frame.size.width * 0.5;
+//
+//    // 在默认布局属性基础上进行微调
+//    for (UICollectionViewLayoutAttributes *attrs in copyArray) {
+//        // 计算cell中点x 和 collectionView最中间x值  的差距
+//        CGFloat delta = ABS(centerX - attrs.center.x);
+//        // 利用差距计算出缩放比例（成反比）根据情况 自定义
+//        //这里默认 scale = 1.0 - delta / (self.collectionView.frame.size.width + self.itemSize.width）
+//        CGFloat scaleX = 1.0;
+//        CGFloat scaleY = 1.0 - delta / (self.collectionView.frame.size.width + self.itemSize.width+200);
+//        attrs.transform = CGAffineTransformMakeScale(scaleX, scaleY);
+//    }
+//    return copyArray;
+//}
+
+
 //最大旋转角度
 #define rotate 35.0*M_PI/180.0
 //返回一个rect位置下所有cell的位置数组
